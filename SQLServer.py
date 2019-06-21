@@ -1,8 +1,10 @@
-'''
+"""
 
 Подключение к SQL Server (локально) и выполнение select
 
-'''
+Connect to SQL Server (local) and execute select
+
+"""
 
 
 import pypyodbc
@@ -15,7 +17,10 @@ conn_str = ';'.join([driver, server, database])
 # port
 # user
 # psw
+
+
 try:
+
     connection = pypyodbc.connect(conn_str)
     print('connection - done', '\n')
     cursor = connection.cursor()
@@ -32,9 +37,10 @@ try:
         cont_name = row[1]
         country = row[2]
         print(' | '.join([comp_name, cont_name, country]), '\n')
+
 except Exception as ex:
     print(ex)
+
 finally:
     connection.close()
-    print('\n', 'connection - close')
-  
+    print('\n', 'connection - close') 

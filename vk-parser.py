@@ -1,8 +1,13 @@
 """
-Парсер данных со стены в группе вконтакте с API vk
 
-Пофиксить: Когда в windows, то редко post['text'] содержит '\u200b\200b'
+Парсер данных со стены в группе вконтакте с API vk.
+Пофиксить: когда в windows, то редко post['text'] содержит '\u200b\200b'
 и т.д., исключение появляется и не записываются данные в csv
+
+Parser data from the wall in the VKontakte group with API vk.
+Fix: when in windows, rarely post ['text'] contains '\ u200b \ 200b'
+etc., an exception appears and data is not recorded in csv
+
 """
 
 import csv
@@ -72,6 +77,7 @@ def file_writer(data):
             num += 1
     print('Количество исключений (не записанных строк в csv): ', er_num)
     print(f'В файл csv, успешно записались: {str(len(posts)-er_num)} строк')
+    
     
 posts = take_1000_posts()
 file_writer(posts)

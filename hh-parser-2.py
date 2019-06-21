@@ -1,13 +1,14 @@
 """
 
-Парсер вакансий с сайта hh.ru без учёта рекламных предложений
-на всех страницах с которых беру вакансиии
+Парсер вакансий с сайта hh.ru (без учёта рекламных предложений)
+
+Parser vacancies from the site hh.ru (excluding promotional offers)
 
 """
 
 
 import requests
-from bs4 import BeautifulSoup as bs # Для обработки HTML
+from bs4 import BeautifulSoup as bs
 import csv
 
 
@@ -16,6 +17,7 @@ headers = {'accept': '*/*',
            'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36'
           }
 base_url = 'https://hh.ru/search/vacancy?L_is_autosearch=false&area=1&search_period=7&text=Python&from=cluster_area&page=0'
+
 
 def hh_parse(base_url, headers):
     jobs = []
@@ -67,7 +69,8 @@ def hh_parse(base_url, headers):
     else:
         print(f'Error or Done. Status_code: {request.status_code}')
     return jobs    
-       
+ 
+
 def file_writer(jobs):
     with open('parced_jobs_hh.csv', 'w') as file:
         a_pen = csv.writer(file, delimiter=';')
@@ -80,7 +83,8 @@ def file_writer(jobs):
                 print(f'Исключение {ex} у объявления № {num}')
                 print(job['title'], job['company'], job['href'], ' ', sep='\n')
             num += 1
-           
+
+
 jobs_hh = hh_parse(base_url, headers)
 file_writer(jobs_hh)
 print('done')
