@@ -1,8 +1,10 @@
 """
 
+Detection of objects in the photo.
 Download and put in the project folder: resnet50_coco_best_v2.0.1.h5
 https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Detection
 
+Обнаружение объектов на фотографии.
 Скачать необходимо и положить в папку с проектом: resnet50_coco_best_v2.0.1.h5
 
 """

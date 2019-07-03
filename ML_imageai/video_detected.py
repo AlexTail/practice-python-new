@@ -1,10 +1,10 @@
 """
-
+Detecting objects on video.
 Download and put in the project folder: yolo.h5
 https://github.com/OlafenwaMoses/ImageAI/tree/master/imageai/Detection
 
+Обнаружение объектов на видео.
 Скачать и положить в папку с проектом, файл: yolo.h5
-
 """
 
 from imageai.Detection import VideoObjectDetection
