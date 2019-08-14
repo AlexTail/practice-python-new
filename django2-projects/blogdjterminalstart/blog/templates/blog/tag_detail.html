@@ -1,0 +1,17 @@
+{% extends './base_blog.html' %}
+
+{% block title %}
+    {{ tag.title }} - {{ block.super }}
+{% endblock %}
+
+{% block h1 %}
+    Post with  "{{ tag.title|title }}" tag:
+{% endblock %}
+
+{% block content %}
+
+    {% for post in tag.posts.all %}
+        {% include 'blog/includes/post_card_template.html' %}
+    {% endfor %}
+
+{% endblock %}

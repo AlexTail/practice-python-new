@@ -1,0 +1,18 @@
+.admin-panel { /* Lesson 11 step 3 */
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 15px;
+    opacity: 0.5;
+    position: fixed;
+    right: 3em;
+    bottom: 2.5em;
+}
+
+.admin-panel a {
+    display: block;
+    margin: 5px 0;
+}
+
+.admin-panel:hover {
+    opacity: 1;
+}

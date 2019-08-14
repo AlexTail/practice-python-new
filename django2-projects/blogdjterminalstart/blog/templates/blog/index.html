@@ -1,0 +1,15 @@
+{% extends './base_blog.html' %}
+
+{% block title %}
+    Blog's page
+{% endblock %}
+
+{% block h1 %}
+    Posts:
+{% endblock %}
+
+{% block content %} 
+    {% for post in page_object.object_list %}
+        {% include 'blog/includes/post_card_template.html' %}
+    {% endfor %}
+{% endblock %}

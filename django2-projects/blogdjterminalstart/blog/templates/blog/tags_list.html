@@ -1,0 +1,17 @@
+{% extends './base_blog.html' %}
+
+{% block title %}
+    Tags list - {{ block.super }}
+{% endblock %}
+
+{% block h1 %}
+    Tags:
+{% endblock %}
+
+{% block content %}
+    {% for tag in tags %}
+
+        <a href="{{ tag.get_absolute_url}}">{{ tag.title }}</a>
+
+    {% endfor %}
+{% endblock %}
