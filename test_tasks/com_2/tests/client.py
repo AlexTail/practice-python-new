@@ -85,7 +85,7 @@ def create():
     print('Цена билета')
     price = input()
     print('Периодичность мероприятия (каждый день/каждый месяц/каждый год/разово)')
-    periodicity = input()
+    periodicity = input() 
 
     req = {
         "events": {
@@ -110,10 +110,10 @@ def buy_ticket():
     print('Количество билетов')
     num_places = input()
     print('Id операции')
-    transaction_id = input()
+    transaction_id = input() # Transaction id
     req = {
         "buy_tickets": {
-            "id": "Transaction id",       # transaction_id
+            "id": transaction_id,       
             "title": title,
             "date": date,
             "number": num_places,
